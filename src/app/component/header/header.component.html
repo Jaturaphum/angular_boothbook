@@ -1,0 +1,43 @@
+<mat-toolbar
+  class="fxLayou dark app-toolbar"
+  style="width: 100%;
+  height: 80px;
+  flex-direction: row;
+  justify-content: space-between;
+  background-color: black;
+  color: ghostwhite;">
+
+<div class="fxLayout" style="flex-direction: row; align-items: center;">
+  <mat-icon>nature</mat-icon>
+  <span>&nbsp;GROUP 12</span>
+</div>
+<div>
+  <button mat-flat-button style="background-color: black; color: ghostwhite;" routerLink="/">
+    Home
+  </button>
+  <button mat-flat-button
+  [mat-menu-trigger-for]="menu"
+  style="background-color: black; color: ghostwhite;">
+    List
+  </button>
+  <mat-menu #menu="matMenu">
+    <button mat-menu-item ><a href="/boothbook/main">Zones</a></button>
+    <button mat-menu-item><a href="/boothbook/booths">Booths</a></button>
+  </mat-menu>
+  <button mat-flat-button style="background-color: black;color: ghostwhite;" routerLink="/booking">
+    Bookings
+  </button>
+  <button mat-flat-button
+  [mat-menu-trigger-for]="account"
+  style="background-color: black; color: ghostwhite;">
+    Account
+  </button>
+  <mat-menu #account="matMenu">
+    <button mat-menu-item routerLink="/login">login</button>
+    <button mat-menu-item routerLink="/viewMe">ViewMe</button>
+    <button mat-menu-item routerLink="/viewprofile">ViewAll</button>
+    <button mat-menu-item routerLink="/logout">Logout</button>
+  </mat-menu>
+
+</div>
+</mat-toolbar>

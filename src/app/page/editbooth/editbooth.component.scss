@@ -1,0 +1,76 @@
+div {
+    display: flex;
+    padding: 20px;
+    background-color: #ffffff;
+    
+    h2 {
+      font-size: 1.5rem;
+      color: #333;
+      margin-bottom: 1rem;
+      text-align: center;
+      font-weight: bold;
+    }
+  
+    label {
+      font-size: 1rem;
+      color: #555;
+      margin-bottom: 0.3rem;
+    }
+  
+    .form-control {
+      padding: 8px;
+      margin-bottom: 1rem;
+      border: 1px solid #ddd;
+      border-radius: 5px;
+      transition: border-color 0.3s;
+  
+      &:focus {
+        border-color: #007bff;
+        outline: none;
+        box-shadow: 0 0 4px rgba(0, 123, 255, 0.3);
+      }
+    }
+  
+    select.form-control {
+      background-color: #fff;
+      color: #333;
+    }
+  
+    // Button styling
+    .btn {
+      padding: 10px 15px;
+      border-radius: 5px;
+      font-size: 1rem;
+      transition: background-color 0.3s;
+      width: 100px; // Ensures buttons are the same width
+  
+      &-primary {
+        background-color: #007bff;
+        color: #fff;
+        border: none;
+  
+        &:hover {
+          background-color: #0056b3;
+        }
+      }
+  
+      &-secondary {
+        background-color: #6c757d;
+        color: #fff;
+        border: none;
+        margin-left: 10px;
+  
+        &:hover {
+          background-color: #5a6268;
+        }
+      }
+    }
+
+    > div {
+      display: flex;
+      justify-content: center;
+      gap: 10px;
+      margin-top: 20px;
+    }
+  }
+  

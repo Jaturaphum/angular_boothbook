@@ -1,0 +1,23 @@
+<form (ngSubmit)="onSubmit()" #boothForm="ngForm" class="custom-form">
+  <h2>เพิ่มบูทใหม่</h2>
+
+  <div class="form-group">
+    <label for="booth_name">ชื่อบูท</label>
+    <input type="text" id="booth_name" [(ngModel)]="booth_name" name="booth_name" required />
+  </div>
+
+  <div class="form-group">
+    <label for="booth_size">ขนาดบูท</label>
+    <input type="text" id="booth_size" [(ngModel)]="booth_size" name="booth_size" required />
+  </div>
+
+  <div class="form-group">
+    <label for="booth_price">ราคา</label>
+    <input type="number" id="booth_price" [(ngModel)]="booth_price" name="booth_price" required />
+  </div>
+
+  <div class="form-actions">
+    <button type="submit" class="btn-submit" [disabled]="boothForm.invalid">เพิ่มบูท</button>
+    <button type="button" class="btn-cancel" (click)="onCancel()">ยกเลิก</button>
+  </div>
+</form>

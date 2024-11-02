@@ -1,0 +1,10 @@
+.edit-zone-form {
+    display: flex;
+    flex-direction: column; // ทำให้ช่องกรอกข้อมูลเรียงในแนวตั้ง
+    gap: 16px; // ช่องว่างระหว่างแต่ละฟิลด์
+  
+    mat-form-field {
+      width: 100%; // ให้ฟิลด์มีความกว้างเต็ม
+    }
+  }
+  

@@ -1,0 +1,8 @@
+{
+  "/api": {
+    "target": "http://wag12.bowlab.net/api",
+    "secure": false,
+    "changeOrigin": true,
+    "logLevel": "debug"
+  }
+}

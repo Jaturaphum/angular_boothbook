@@ -1,0 +1,42 @@
+<app-header></app-header>
+<div class="booking-container">
+  <h2>รายการจองทั้งหมด</h2>
+
+  <!-- Dropdown สำหรับเลือกสถานะการจอง -->
+  <label for="statusSelect">เลือกสถานะการจอง:</label>
+  <select id="statusSelect" [(ngModel)]="selectedStatus" (change)="loadBookingsByStatus()">
+    <option value="">ทั้งหมด</option>
+    <option value="จอง">จอง</option>
+    <option value="ชำระเงิน">ชำระเงิน</option>
+    <option value="อนุมัติแล้ว">อนุมัติแล้ว</option>
+    <option value="ยกเลิกการจอง">ยกเลิกการจอง</option>
+  </select>
+
+  <p *ngIf="isLoading">กำลังโหลดข้อมูล...</p>
+  <p *ngIf="errorMessage">{{ errorMessage }}</p>
+
+  <table class="booking-table" *ngIf="bookings.length > 0 && !isLoading">
+    <thead>
+      <tr>
+        <th>Booking ID</th>
+        <th>Member ID</th>
+        <th>Booth ID</th>
+        <th>สถานะการจอง</th>
+        <th>วันที่จอง</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let booking of bookings">
+        <td>{{ booking.booking_id }}</td>
+        <td>{{ booking.member_id }}</td>
+        <td>{{ booking.booth_id }}</td>
+        <td>{{ booking.booking_status }}</td>
+        <td>{{ booking.booking_date | date: 'dd/MM/yyyy' }}</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <ng-template #noData>
+    <p *ngIf="!isLoading && bookings.length === 0">ไม่มีข้อมูลการจอง</p>
+  </ng-template>
+</div>

@@ -1,0 +1,34 @@
+<h2 mat-dialog-title>แก้ไขข้อมูลโซน</h2>
+
+<form [formGroup]="zoneForm" (ngSubmit)="save()" class="edit-zone-form">
+
+  <mat-form-field appearance="fill">
+    <mat-label>ชื่อโซน</mat-label>
+    <input matInput formControlName="zone_name" required>
+    <mat-error *ngIf="zoneForm.get('zone_name')?.invalid && (zoneForm.get('zone_name')?.dirty || zoneForm.get('zone_name')?.touched)">
+      ชื่อโซนไม่สามารถว่างได้
+    </mat-error>
+  </mat-form-field>
+
+  <mat-form-field appearance="fill">
+    <mat-label>ข้อมูลโซน</mat-label>
+    <textarea matInput formControlName="zone_info" required></textarea>
+    <mat-error *ngIf="zoneForm.get('zone_info')?.invalid && (zoneForm.get('zone_info')?.dirty || zoneForm.get('zone_info')?.touched)">
+      ข้อมูลโซนไม่สามารถว่างได้
+    </mat-error>
+  </mat-form-field>
+
+  <mat-form-field appearance="fill">
+    <mat-label>จำนวนบูธ</mat-label>
+    <input matInput type="number" formControlName="booth_count" required>
+    <mat-error *ngIf="zoneForm.get('booth_count')?.invalid && (zoneForm.get('booth_count')?.dirty || zoneForm.get('booth_count')?.touched)">
+      จำนวนบูธต้องเป็นตัวเลขและมากกว่าศูนย์
+    </mat-error>
+  </mat-form-field>
+
+  <div mat-dialog-actions>
+    <button mat-button type="button" (click)="close()">ยกเลิก</button>
+    <button mat-raised-button color="primary" type="submit" [disabled]="zoneForm.invalid">บันทึก</button>
+  </div>
+  
+</form>

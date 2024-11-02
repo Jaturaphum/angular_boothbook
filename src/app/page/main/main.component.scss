@@ -1,0 +1,73 @@
+.container {
+  max-width: 1200px;
+  margin: auto;
+}
+
+.titlezone {
+  font-size: 24px;
+  font-weight: bold;
+  color: #333;
+}
+
+.add-zone-btn {
+  margin: 10px 0;
+  padding: 10px 20px;
+  font-size: 16px;
+}
+
+.zone-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+  margin-top: 20px;
+}
+
+.zone-box {
+  flex: 1 1 calc(33.33% - 16px);
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  padding: 16px;
+  box-sizing: border-box;
+  background-color: #f9f9f9;
+  transition: transform 0.2s;
+}
+
+.zone-box:hover {
+  transform: scale(1.02);
+}
+
+.zone-details h3 {
+  font-size: 20px;
+  color: #0056b3;
+  margin-bottom: 10px;
+}
+
+.zone-actions {
+  text-align: right;
+}
+
+.btn_view,
+.btn_edit,
+.btn_del {
+  margin-top: 5px;
+  margin-bottom: 5px;
+  width: 100%;
+  padding: 8px;
+  font-size: 14px;
+}
+
+.btn_view {
+  background-color: #007bff;
+  color: #fff;
+}
+
+.btn_edit {
+  background-color: #e3910b;
+  color: #fff;
+}
+
+.btn_del {
+  background-color: #dc3545;
+  color: #fff;
+}

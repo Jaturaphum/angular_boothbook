@@ -1,0 +1,22 @@
+<app-header></app-header>
+<div class="container">
+  <h2 class="titlezone" style="padding: 10px;">โซน</h2>
+  <button class="btn btn-primary add-zone-btn">เพิ่มโซน</button>
+  <div class="zone-container">
+    <div class="zone-box" *ngFor="let zone of zones">
+      <div class="row">
+        <div class="col-sm-8 zone-details">
+          <h3>{{ zone.zone_name }}</h3>
+          <p>Info: {{ zone.zone_info }}</p>
+          <p>Booth Count: {{ zone.booth_count }}</p>
+        </div>
+        <div class="col-sm-4 zone-actions">
+          <a [attr.href]="'/boothbook/booths?zone_id=' + zone.zone_id" class="btn btn-primary btn_view">บูธ</a><br>
+          <button class="btn btn-secondary btn_edit" (click)="editZone(zone.zone_id)">แก้ไข</button><br>
+          <button class="btn btn-danger btn_del" (click)="deleteZone(zone.zone_id)">ลบ</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<app-footer></app-footer>
